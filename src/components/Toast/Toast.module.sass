@@ -1,0 +1,41 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.toast
+	width: $toast-width
+	position: fixed
+	top: 0
+	left: 50%
+	transform: translate(-50%, 0)
+	padding: 30px 15px 15px 25px
+	display: flex
+	border-radius: $lg-border-radius
+	color: $white
+	animation: toast-in .15s
+	z-index: 999
+
+	& > div
+		margin: 0 20px
+		width: calc(100% - 60px)
+		flex-basis: calc(100% - 60px)
+		font-size: $medium-text
+		line-height: 1.21
+		font-weight: 800
+
+.errorToast
+	background: $yellow
+	box-shadow: 0 10px 20px 0 rgba(241,183,125,0.23)
+
+	.closeIcon svg > g > g
+		fill: $brown-4
+
+.successToast
+	background: $green
+	box-shadow: 0 10px 20px 0 rgba(125,241,174,0.23)
+
+.closeIcon
+	cursor: pointer
+
+@keyframes toast-in
+	from
+		transform: translate(-50%, -120%)

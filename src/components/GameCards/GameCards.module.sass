@@ -1,0 +1,308 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.dailyGameCard
+	height: $game-card-height
+	width: calc(100% - 20px)
+	flex-basis: calc(100% - 20px)
+	max-width: $game-card-width
+	padding: 20px
+	background: $white
+	border-radius: $lg-border-radius - 2
+	box-shadow: 0 10px 20px 0 rgba(87,100,106,0.14)
+
+.tournamentCard
+	@extend .dailyGameCard
+
+	.gameDetails
+		margin-top: 10px
+
+		& > div
+			&:nth-child(1)
+				width: 30%
+				flex-basis: 30%
+
+			&:nth-child(2)
+				width: 30%
+				flex-basis: 30%
+
+			&:nth-child(3)
+				width: 20%
+				flex-basis: 20%
+
+			&:nth-child(4)
+				width: 20%
+				flex-basis: 20%
+
+.featuredTournamentCard
+	height: $featured-game-card-height
+	width: $featured-game-card-width
+	flex-basis: $featured-game-card-width
+
+	.tournamentPrice
+		font-size: $regular-text
+
+		svg
+			transform: translate(-7px, 0)
+			width: inherit
+			height: inherit
+
+	.gameDetails
+		.pillValue
+			font-size: $small-text + 1
+
+		svg
+			width: 25px
+			height: 25px
+
+		button
+			height: 34px
+
+		& > div
+			&:nth-child(1)
+				width: 38%
+				flex-basis: 38%
+
+			&:nth-child(2)
+				width: 32%
+				flex-basis: 32%
+
+			&:nth-child(3)
+				width: 30%
+				flex-basis: 30%
+
+.gameSummary
+	display: flex
+	justify-content: space-between
+
+.Wining
+	display: flex
+	justify-content: space-between
+
+.title
+	font-size: $regular-text
+	line-height: 1.25
+	font-weight: 600
+
+	svg
+		transform: translateY(8px)
+
+.tournamentPrice
+	font-size: $lg-regular-text + 2
+	line-height: 1.22
+	font-weight: 600
+	display: flex
+	align-items: center
+
+	svg
+		width: 24px
+		height: 23px
+		transform: translate(-7px, -2px)
+
+.gameDetails
+	margin-top: 15px
+	display: flex
+
+	& > div
+		display: flex
+		align-items: center
+
+		&:nth-child(1)
+			width: 30%
+			flex-basis: 30%
+
+		&:nth-child(2)
+			width: 20%
+			flex-basis: 20%
+
+		&:nth-child(3)
+			width: 30%
+			flex-basis: 30%
+
+		&:nth-child(4)
+			width: 20%
+			flex-basis: 20%
+
+		&:last-child
+			display: flex
+			justify-content: flex-end
+
+.pillValue
+	margin-left: 7px
+	padding: 5px 10px
+	font-size: $regular-text + 1
+	line-height: 1.24
+	font-weight: 600
+	background: $ash
+	border-radius: $lg-border-radius + 2
+
+.modal
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	background: rgba(67,52,69,0.51)
+	overflow: auto
+	z-index: 100
+
+	> div
+		position: relative
+		@include fullCenter
+		padding: 50px
+		min-height: 100vh
+
+.modalBackdrop
+	@include fullAbsolute
+	z-index: 5
+
+.modalContent
+	position: relative
+	width: 100%
+	max-width: 405px
+	background: $white
+	border-radius: $lg-border-radius - 2
+	box-shadow: 0 6px 10px 0 rgba(53,59,63,0.1)
+	z-index: 10
+
+	header
+		margin: 0
+		padding: 15px 30px
+		border-bottom: thin solid $light-gray
+
+		h4
+			font-size: $small-text + 1
+			line-height: 1.23
+			letter-spacing: 0.91px
+			font-weight: 600
+			@include ellipsis
+
+.gameWinningSummary
+	padding: 15px 30px
+	text-align: center
+
+	p
+		font-size: $small-text - 2
+		line-height: 1.2
+		font-weight: 600
+
+	.detailsText
+		margin-bottom: 15px
+
+.gameWinning
+	background: $yellow
+	height: 40px
+	margin: 10px 0 50px
+	padding: 0 15px
+	display: inline-flex
+	align-items: center
+	font-size: $lg-regular-text + 4
+	line-height: 1.21
+	font-weight: 600
+	border-radius: $button-sm-border-radius
+
+.gameWinningTrophy
+	margin-bottom: 5px
+
+	svg
+		width: 26px
+		height: 26px
+
+.tournamentSummary
+	padding: 15px 30px
+	text-align: center
+
+	p
+		font-size: $small-text - 2
+		line-height: 1.2
+		font-weight: 600
+
+.latejoining
+	padding: 15px 30px
+
+	p
+		margin-bottom: 40px
+		font-size: $regular-text
+		line-height: 1.25
+
+	strong
+		font-weight: 600
+
+.detailsText
+	padding-bottom: 5px
+
+.tournamentWinning
+	background: $yellow
+	height: 40px
+	margin: 10px 0 20px
+	padding: 0 15px
+	display: inline-flex
+	align-items: center
+	color: $white
+	font-size: $lg-regular-text
+	line-height: 1.2
+	font-weight: 600
+	border-radius: $button-sm-border-radius
+
+	svg
+		margin-right: 8px
+
+		polygon, path
+			fill: $white
+
+.privateGameSummary
+	padding: 30px 35px
+	text-align: center
+	
+	&.loading
+		opacity: 0.5
+
+	h4
+		margin-top: 20px
+		font-size: $lg-regular-text + 5
+		line-height: 1.2
+		font-weight: 600
+
+	h5
+		font-size: $regular-text + 1
+		line-height: 1.23
+		font-weight: 600
+
+	p
+		margin: 50px 0 30px
+		font-size: $medium-text
+		line-height: 1.21
+		font-weight: 500
+
+		b
+			font-weight: 600
+
+.tournamentInfoPill
+	background: $ash
+	height: 42px
+	margin: 5px 6px
+	padding: 0 20px 0 8px
+	display: inline-flex
+	align-items: center
+	font-size: $regular-text + 2
+	line-height: 1.22
+	font-weight: 600
+	border-radius: $button-sm-border-radius
+
+	svg
+		margin-right: 8px
+
+.confirmButton
+	margin-top: 15px
+
+.joinActions
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding-left: 20px
+
+	& > span
+		color: $ash-3
+		letter-spacing: 1.14px
+		font-weight: 600
+		cursor: pointer

@@ -1,0 +1,49 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.container
+	margin: -15px
+
+	header
+		display: flex
+		align-items: center
+
+		& > h4
+			padding: 15px 45px
+			color: $gray-1
+			font-size: $small-text
+			line-height: 1.25
+			letter-spacing: 0.84px
+			font-weight: 600
+
+.transactionsList
+	position: relative
+	margin: auto
+	z-index: 10
+
+	& > div
+		display: flex
+		justify-content: center
+
+		& > div
+			outline: 0
+
+.cardContainer
+	padding: 0 10px 0 45px
+
+.loadMore
+	max-width: $transaction-card-width
+	padding: 5px
+	text-align: center
+
+	span
+		color: $brown-3
+		font-size: $small-text - 1
+		line-height: 1.54
+		letter-spacing: 0.79px
+		font-weight: 600
+		cursor: pointer
+
+.isLoading
+	cursor: default
+	opacity: .6

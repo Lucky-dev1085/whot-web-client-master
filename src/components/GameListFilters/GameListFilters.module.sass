@@ -1,0 +1,117 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.filterLabel
+	color: $red
+	font-size: $regular-text
+	line-height: 1.25
+	letter-spacing: 1.12px
+	font-weight: 600
+	cursor: pointer
+
+	svg
+		transform: translate(-2px, 2px)
+
+	&.inactive
+		color: $brown-3
+
+	&:not(.inactive)
+		svg > g > g
+			fill: $red
+
+.resetFilter
+	cursor: pointer
+
+	svg
+		margin-left: 5px
+		transform: translate(-2px, 3px)
+	
+.filterModal
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	overflow: auto
+	z-index: 60
+
+.filterBackdrop
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	background-color: rgba(67,52,69,0.51)
+
+.filterContent
+	position: relative
+	width: $games-list-filter-width
+	max-height: $games-list-filter-height
+	background: $white
+	margin: 30px auto
+	padding: 15px 30px 20px
+	border-radius: $lg-border-radius - 2
+
+	& > h4
+		margin-bottom: 25px
+		padding: 0 5px
+		font-size: $small-text + 1
+		line-height: 1.23
+		letter-spacing: 0.91px
+		font-weight: 600
+
+.amountSelect
+	margin-bottom: 25px 
+
+.amountSelectLabel
+	@include fullCenter
+	text-align: center
+	color: $gray-1
+	font-size: $small-text
+	line-height: 1.25
+	letter-spacing: 0.84px
+	font-weight: 600
+	margin-bottom: 20px
+
+	svg
+		margin-right: 10px
+
+.amountOptions
+	text-align: center
+
+.amountOption
+	margin: 0 10px 10px 0
+	padding: 8px 12px
+	display: inline-block
+	background: $light-gray-2
+	color: $gray-2
+	font-size: $small-text - 1
+	line-height: 1.08
+	font-weight: bold
+	border-radius: $md-border-radius
+	cursor: pointer
+	transition: .3s $primary-ease
+
+	&.active
+		background: $red
+		color: $white
+
+.playersSelect
+	margin-bottom: 30px
+	padding: 0 5px
+	display: flex
+	justify-content: space-between
+	color: $gray-1
+	font-weight: 600
+
+	& > div
+		display: flex
+		align-items: center
+
+.playersSelectLabel
+	font-size: $small-text
+	line-height: 1.25
+	letter-spacing: 0.84px
+
+	svg
+		margin-right: 10px

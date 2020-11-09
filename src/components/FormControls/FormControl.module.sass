@@ -1,0 +1,198 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.formGroup
+    position: relative
+    margin-bottom: 20px
+
+    .formControl
+        width: 100%
+        height: $form-input-height
+        background: $white
+        padding: 15px 25px
+        font-size: $regular-text
+        color: $black
+        border-radius: $input-border-radius
+        border: $regular-border solid $brown-3
+        transition: .3s
+
+        &[type="text"]
+            -webkit-appearance: none
+
+        &[type="search"]
+            appearance: none
+
+            &::-webkit-search-decoration, &::-webkit-search-cancel-button
+                appearance: none
+
+        &::placeholder
+            color: $brown-3
+
+        &:focus
+            outline: 0
+            border-color: $black
+
+        &:disabled
+            background: $gray-4
+            color: transparentize($black, .6)
+            cursor: not-allowed
+
+        &.inputError
+            border-color: $red
+
+        &:required
+            box-shadow: none
+
+        &::-webkit-outer-spin-button, &::-webkit-inner-spin-button
+            appearance: none
+            margin: 0
+
+        &[type=number]
+            -moz-appearance: textfield
+
+        &.dateInput
+            @include fullCenter
+            height: $date-input-height
+            padding: 8px 12px
+            border: thin solid $red
+            color: $red
+            font-size: $medium-text
+            font-weight: 600
+            cursor: pointer
+
+    .label
+        display: block
+        color: $gray-1
+        font-size: $form-label-text
+        letter-spacing: 0.7px
+        line-height: 1.2
+        font-weight: 600
+        padding-left: 25px
+        margin-bottom: 5px
+        transition: .3s
+
+        &.focusedLabel
+            color: $black
+
+        &.errorLabel
+            color: $red
+
+textarea.formControl
+    resize: none
+
+.select.formControl
+    appearance: none
+    padding: 10px 35px 10px 25px
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxMHB4IiBoZWlnaHQ9IjVweCIgdmlld0JveD0iMCAwIDEwIDUiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+742fPC90aXRsZT4gICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+ICAgIDxnIGlkPSIwNS1BY2Nlc3MtQ29udHJvbCIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8ZyBpZD0iNS4xLUFjY2Vzcy1Db250cm9sLS0tLUFkbWluLS0tQ3JlYXRpb24iIHRyYW5zZm9ybT0idHJhbnNsYXRlKC00NDUuMDAwMDAwLCAtMzU1LjAwMDAwMCkiIGZpbGw9IiM0MDM2NDUiIGZpbGwtcnVsZT0ibm9uemVybyI+ICAgICAgICAgICAgPHBvbHlnb24gaWQ9Iu+NnyIgcG9pbnRzPSI0NDUgMzU1IDQ1NSAzNTUgNDUwIDM2MCI+PC9wb2x5Z29uPiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+)
+    background-position: calc(100% - 20px) center
+    background-repeat: no-repeat
+    cursor: pointer
+
+    &.placeholderSelect
+        color: $brown-3
+
+.checkboxInput, .radioInput
+    display: flex
+    position: relative
+    cursor: pointer
+
+    .checkbox, .radio
+        &Indicator
+            position: relative
+            display: inline-block
+            width: $checkbox-dim
+            height: $checkbox-dim
+            flex-basis: $checkbox-dim
+            border: $regular-border solid $brown-3
+            border-radius: $regular-border-radius + 1
+            background: $white
+            transition: .2s
+
+            @include after
+                position: absolute
+                top: 1px
+                right: 1px
+                bottom: 1px
+                left: 1px
+                background: $black
+                opacity: 0
+                transition: .2s
+
+        &Content
+            width: calc(100% - #{ $checkbox-dim + 15 })
+            flex-basis: calc(100% - #{ $checkbox-dim + 15 })
+            margin-left: 15px
+            font-size: $medium-text
+            transform: translateY(-1px)
+
+    input
+        position: absolute
+        z-index: -1
+        opacity: 0
+
+        &:checked
+            & + .checkboxIndicator
+                border-color: $black
+
+                &:after
+                    opacity: 1
+                    
+            & + .radioIndicator
+                border-color: $black
+
+                &:after
+                    opacity: 1
+
+        &:disabled
+            & ~ *
+                opacity: .6
+
+.radio-input
+    margin-bottom: 10px
+
+.datePicker
+    .label
+        padding-left: 15px
+
+.numberSelect
+    @include fullCenter
+
+.numberSelectControl
+	display: inline-block
+	margin: 0 10px
+	width: 34px
+	height: 34px
+	background: $white
+	border-radius: 50%
+	box-shadow: 0 2px 4px 0 rgba(186,176,187,0.29)
+	@include fullCenter
+	cursor: pointer
+	user-select: none
+
+	&.focused
+		box-shadow: 0 2px 1px 0 rgba(186, 176, 187, .19)
+
+.numberSelectValue
+	display: inline-block
+	width: 42px
+	height: 42px
+	background: transparentize($brown-3, .77)
+	border-radius: 50%
+	@include fullCenter
+	cursor: default
+
+.inputTip, .errorTip
+	font-size: $medium-text
+	line-height: 1.21
+	margin-left: 25px
+	transform: translateY(-15px)
+
+.inputTip
+	color: $brown-3
+
+.errorTip
+	color: $red
+
+\:global
+    .react-datepicker-wrapper
+        display: block !important

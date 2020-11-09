@@ -1,0 +1,43 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.bankCard
+	width: $bank-card-width
+	height: $bank-card-height
+	background: $black
+	padding: 54px 12px 12px 12px
+	border: $md-border - 1 solid $black
+	border-radius: $lg-border-radius
+	box-shadow: 0 6px 12px 0 rgba(67,52,69,0.34)
+	color: $white
+	position: relative
+	transition: border-color .2s ease
+	cursor: pointer
+
+	@include before
+		position: absolute
+		top: 12px
+		left: 12px
+		width: 33px
+		height: 20px
+		background: transparentize($gray-2, .42)
+		border-radius: $lg-border-radius - 2
+
+	h4
+		margin-bottom: 5px
+		font-size: $regular-text - 1
+		line-height: 1.2
+		letter-spacing: 1 
+		font-weight: 600
+		text-transform: uppercase
+		@include ellipsis
+
+	p
+		color: transparentize($white, .6)
+		font-size: $small-text - 2
+		line-height: 1.2
+		letter-spacing: 1px
+		font-weight: 600
+
+		span
+			color: $white

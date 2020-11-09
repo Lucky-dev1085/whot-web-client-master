@@ -1,0 +1,54 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.container
+	padding: 0 0 0 30px
+
+	& > h4
+		margin-bottom: 15px
+		color: $gray-1
+		font-size: $small-text
+		line-height: 1.25
+		letter-spacing: 0.84px
+		font-weight: 600
+		
+	& > p
+		font-size: $medium-text
+		line-height: 1.21
+
+.voucherInput
+	position: absolute
+	z-index: -10
+	opacity: 0
+
+.codeCharacters
+	margin-top: 15px
+	display: flex
+	cursor: pointer
+
+	& > div
+		width: 38px
+		height: 44px
+		background: transparentize($brown-3, .78)
+		margin-right: 7px
+		border-radius: $md-border-radius + 2
+		@include fullCenter
+		font-size: $lg-regular-text
+		line-height: 1.2
+		font-weight: 600
+
+.inputBlink
+	animation: blinker .7s $primary-ease infinite
+
+.formActions
+	margin-top: 100px
+	max-width: 355px
+	display: flex
+	justify-content: flex-end
+
+@keyframes blinker
+	from
+		opacity: 1
+	
+	to
+		opacity: 0

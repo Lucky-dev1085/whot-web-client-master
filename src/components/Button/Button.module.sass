@@ -1,0 +1,58 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.btn
+	display: inline-block
+	height: $btn-height
+	text-align: center
+	vertical-align: middle
+	user-select: none
+	background: $white
+	font-weight: 600
+	line-height: 1.06
+	color: $black
+	padding: 5px 40px
+	cursor: pointer
+	border: 0
+	border-radius: $xl-border-radius 
+	box-shadow: 0 10px 20px 0 rgba(87,100,106,0.14)
+	
+	&:hover
+		outline: 0
+		
+	&:focus
+		outline: 0
+		
+	&:disabled
+		opacity: .6
+		cursor: not-allowed
+		
+	&.btnBlock
+		width: 100%
+
+	&.btnSm
+		height: $btn-sm-height
+		letter-spacing: 1.14px
+
+	&.btnXs
+		height: $btn-sm-height
+		letter-spacing: 1.14px
+		padding: 5px 25px
+
+	&.btnMd
+		height: $btn-md-height
+		letter-spacing: 1.14px
+
+	&.secondary
+		color: $white
+		background: $red
+		box-shadow: 0 6px 10px 0 rgba(162,75,88,0.16)
+
+	&.transparent
+		color: $white
+		background: transparent
+		border: thin solid $white
+		box-shadow: none
+
+.linkBtn
+	@include fullCenter

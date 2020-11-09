@@ -1,0 +1,34 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.accountCard
+	background: url('../../shared/images/account-card-bg.svg')
+	background-size: cover
+	width: $account-card-width
+	height: $account-card-height
+	box-shadow: 0 12px 20px 0 rgba(38,44,47,0.12)
+
+	h3
+		font-size: $lg-regular-text
+		line-height: 1.2
+		font-weight: 600
+		@include ellipsis
+
+	span
+		display: block
+		color: rgba(255,255,255,0.65)
+		font-size: $medium-text - 1
+		font-weight: 600
+		@include ellipsis
+
+.logoutLink
+	display: flex
+	align-items: center
+	color: $light-gray-4
+	font-size: $medium-text - 1
+	letter-spacing: 0.93px
+	font-weight: 600
+	cursor: pointer
+
+	svg
+		margin-right: 10px

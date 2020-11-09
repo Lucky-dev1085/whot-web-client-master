@@ -1,0 +1,228 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.modal
+	@include fullAbsolute
+	background: rgba(41,48,47,0.8)
+	overflow: auto
+	z-index: 40
+
+.content
+	padding: 40px 0
+	display: flex
+	justify-content: center
+
+	& > div
+		width: $game-table-modal-width
+		min-height: $game-table-modal-height
+		padding: 20px 45px 25px 45px
+		border-radius: $lg-border-radius
+		background-color: $white
+		text-align: center
+		box-shadow: 0 6px 10px 0 rgba(53,59,63,0.1)
+
+		&.winningContainer
+			padding: 20px 35px 25px 35px
+
+		&.opponentsContainer
+			padding: 0
+
+		&.countdownContainer
+			min-height: auto
+
+.winningContainer
+	background: url('../../shared/images/confetti.svg')
+	background-position: center
+
+.tournamentWinningContainer
+	h2
+		margin: 15px 0 0
+
+	h4
+		margin-top: 10px
+
+	.linkBtn
+		margin-top: 30px
+		font-size: $medium-text
+		letter-spacing: 0.2px
+
+.losingContainer
+	h2
+		margin: 5px 0 0
+
+	.linkBtn
+		margin-top: 35px
+		font-size: $medium-text
+		letter-spacing: 0.2px
+
+h2
+	margin: 0
+	font-size: $game-modal-title-text
+	line-height: 1.2
+
+h4
+	font-size: $regular-text + 1
+	font-weight: 800
+	line-height: 1.24
+
+.winning
+	color: $red
+
+.opponentCardsLink
+	margin-top: 10px
+	color: $red
+	font-size: $medium-text
+	line-height: 1.21
+	font-weight: 800
+
+	span
+		display: inline-flex
+		align-items: center
+		cursor: pointer
+
+	svg
+		margin-left: 5px
+
+.modalNote
+	margin: 25px 0 15px
+	color: $gray-2
+	font-size: $medium-text
+	line-height: 1.21
+	font-weight: 600
+
+.linkBtn
+	display: inline-flex
+	letter-spacing: 1.14px
+
+.exitBtn
+	display: block
+	margin-top: 20px
+	color: $ash-3
+	font-size: $regular-text
+	letter-spacing: 1.14px
+	font-weight: 600
+
+	&:hover
+		color: $ash-3
+
+.opponentsHeader
+	height: $opponents-modal-header-height
+	padding-top: 20px
+	border-bottom: $regular-border solid transparentize($light-gray-5, .73)
+
+.opponentsCarouselControls
+	height: $opponents-name-carousel-height
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding: 0 18px
+
+	& > span
+		display: inline-block
+		transform: translateY(3px)
+		cursor: pointer
+
+.disableControl
+	pointer-events: none
+	opacity: .5
+
+.hiddenControl
+	opacity: 0
+
+.opponentsNames
+	width: calc(100% - 60px)
+	flex-basis: calc(100% - 60px)
+	overflow: hidden
+	
+	& > div
+		display: flex
+		transition: .25s $primary-ease
+
+	h4
+		width: 100%
+		font-size: $game-modal-title-text-sm
+		line-height: 1.1
+
+.cardsArea
+	height: $game-table-modal-height - ($opponents-modal-header-height + $opponents-modal-footer-height)
+	overflow: hidden
+
+	& > div
+		height: 100%
+		display: flex
+		transition: .25s $primary-ease
+
+		
+.opponentCards
+	height: 100%
+	width: 100%
+	padding: 5px 30px
+	overflow: auto
+	text-align: left
+
+	& > span
+		display: inline-block
+		width: 70px
+		height: 105px 
+		margin: 10px 5px
+		border: $regular-border solid transparentize($light-gray-5, .73)
+		border-radius: $medium-border-radius
+
+		svg
+			width: 100%
+			height: 100%
+
+.opponentsFooter
+	height: $opponents-modal-footer-height
+	@include fullCenter
+	border-top: $regular-border solid transparentize($light-gray-5, .73)
+
+	& > span
+		color: $ash-3
+		font-size: $regular-text
+		letter-spacing: 1.14px
+		cursor: pointer
+
+.gameTitle
+	color: $red
+
+.countdown
+	margin: 20px 0 10px
+	position: relative
+
+	circle:last-child
+		transform-origin: center
+		animation: countdown-progress 5s linear
+
+.countdownValue
+	position: absolute
+	top: 58px
+	right: 0
+	left: 0
+
+	& > span
+		color: $gray-5
+		font-size: $x-large-text
+		line-height: 1
+
+.countdownSecond
+	display: inline-flex
+	height: 1em
+	overflow: hidden
+
+.countdownSecondValues
+	display: inline-flex
+	flex-direction: column
+	transform: translate(0, -4em)
+	animation: countdown-second-progress 5s linear
+
+@keyframes countdown-progress
+	from
+		stroke-dasharray: 0, 471
+
+	to
+		stroke-dasharray: 471, 471
+
+@keyframes countdown-second-progress
+	from
+		transform: translate(0, 0)

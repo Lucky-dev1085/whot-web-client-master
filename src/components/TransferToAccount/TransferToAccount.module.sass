@@ -1,0 +1,103 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.container
+	padding: 0 0 0 30px
+
+	& > h4
+		margin-bottom: 15px
+		color: $gray-1
+		font-size: $small-text
+		line-height: 1.25
+		letter-spacing: 0.84px
+		font-weight: 600
+
+.bankCard
+	margin-bottom: 22px
+	width: $withdrawal-bank-card-width
+	height: $withdrawal-bank-card-height
+	background-color: rgba(201,197,202,0.52)
+	padding: 10px 12px 10px 15px
+	border-radius: $lg-border-radius - 1
+	box-shadow: 0 12px 20px 0 rgba(83,96,103,0.12)
+
+	h4
+		margin: 0 0 5px
+		font-size: $small-text + 1
+		line-height: 1.23
+		font-weight: 600
+		text-transform: uppercase
+		@include ellipsis
+
+	p
+		font-size: $small-text - 2
+		line-height: 1.2
+		letter-spacing: 1px
+		font-weight: 600
+
+.amountInput
+	max-width: 250px
+
+.quickSelections
+	margin-top: 30px
+
+	& > h5
+		margin-bottom: 8px
+		padding-left: 25px
+		color: $gray-1
+		font-size: $small-text - 2
+		line-height: 1.2
+		letter-spacing: 0.7px
+		font-weight: 600
+
+	& > span
+		margin-right: 12px
+		height: 32px
+		padding: 0 15px
+		display: inline-flex
+		align-items: center
+		background: transparentize($brown-3, .78)
+		font-size: $regular-text
+		line-height: 1.25
+		font-weight: 600
+		border-radius: $lg-border-radius + 5
+		cursor: pointer
+
+.formActions
+	margin-top: 40px
+	max-width: 355px
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+	& > span
+		color: $brown-3
+		font-size: $small-text + 1
+		letter-spacing: 0.93px
+		font-weight: 600
+
+	button
+		display: inline-block
+		height: $btn-height
+		text-align: center
+		vertical-align: middle
+		user-select: none
+		background: $red
+		font-weight: 600
+		line-height: 1.06
+		color: $white
+		padding: 5px 40px
+		cursor: pointer
+		border: 0
+		border-radius: $xl-border-radius 
+		box-shadow: 0 6px 10px 0 rgba(162,75,88,0.16)
+		
+		&:hover
+			outline: 0
+			
+		&:focus
+			outline: 0
+			
+		&:disabled
+			opacity: .6
+			cursor: not-allowed

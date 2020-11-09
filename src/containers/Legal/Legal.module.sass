@@ -1,0 +1,52 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.container
+	min-height: 100vh
+	padding-bottom: 25px
+
+.header
+	height: $legal-header-height
+	background: $white
+	box-shadow: 0 6px 12px 0 rgba(97,109,117,0.05)
+	padding: 25px 15px 10px 30px
+	display: flex
+	justify-content: space-between
+	align-items: center
+	position: sticky
+	top: 0
+
+	svg
+		transform: scale(.82)
+
+.nav
+	padding: 5px 45px
+	font-size: $legal-nav-text - 4
+	line-height: 2.08
+	font-weight: 800
+	text-transform: uppercase
+
+	@include respondTo('size-sm')
+		font-size: $legal-nav-text		
+
+	ul > li
+		display: inline-block
+
+		&:first-child
+			margin-right: 32px
+
+	a
+		color: $brown-3
+
+		&.activeLink
+			color: $black
+
+.policyContent
+	margin: 0 20px
+	background: $light-gray-2
+	padding: 25px 35px 10px
+	line-height: 1.25
+
+	p
+		text-align: justify
+		margin-bottom: 1em

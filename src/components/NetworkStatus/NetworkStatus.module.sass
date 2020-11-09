@@ -1,0 +1,26 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.offlineNotification
+	position: fixed
+	top: 15px
+	left: 50%
+	transform: translate(-50%, 0)
+	width: $offline-notification-width
+	max-width: 90%
+	padding: 20px 5px
+	border-radius: $lg-border-radius
+	background: $white
+	text-align: center
+	font-size: $medium-text
+	line-height: 1.21
+	font-weight: 600
+	box-shadow: 0 10px 20px 0 rgba(34,42,37,0.23)
+	opacity: 1
+	z-index: 100
+	animation: swipe-down .25s $primary-ease
+
+@keyframes swipe-down
+	from
+		opacity: 0
+		transform: translate3d(-50%, -200%, 0)

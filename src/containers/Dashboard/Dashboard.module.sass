@@ -1,0 +1,84 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.container
+	min-height: 100vh
+	padding: 50px 30px
+	background: $black url('../../shared/images/auth-game-table.png')
+	background-size: cover
+	background-position: center
+	@include fullCenter
+
+	& > div
+		width: $dashboard-modal-width
+		max-width: 100%
+		background: $white
+		padding: 20px 35px 0
+		border-radius: $lg-border-radius
+
+	header
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+		margin-bottom: 25px
+
+.accountBalance
+	font-size: $account-balance-text
+	font-weight: 600
+
+.nav
+
+	ul 
+		display: flex
+		justify-content: space-between
+
+		& > li
+			& > a, & > div
+				display: flex
+				flex-direction: column
+				align-items: center
+				cursor: pointer
+
+			svg
+				margin-bottom: 8px
+
+	h6
+		font-size: $small-text - 2
+		color: $gray-1
+		letter-spacing: 0.7px
+		font-weight: 600
+		line-height: 1.2
+		text-transform: uppercase
+
+.actions
+	margin: 20px 0
+	display: flex
+	justify-content: space-between
+
+	& > a
+		width: calc(50% - 20px)
+		padding: 5px 15px
+
+.tournaments
+	height: $dashboard-carousel-height
+	background: transparentize($light-gray-3 , .66)
+	border-top: thin solid $gray-3
+	margin: 0 -35px
+	padding: 10px 0 15px
+	border-radius: 0 0 $lg-border-radius $lg-border-radius
+
+	& > nav
+		margin-bottom: 10px
+		padding: 0 35px
+		display: flex
+		justify-content: space-between
+		font-size: $medium-text - 1
+		line-height: 1.23
+		font-weight: 600
+
+		span
+			color: $gray-1
+			letter-spacing: 0.91px
+
+		a
+			color: $red

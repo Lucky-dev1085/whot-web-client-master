@@ -1,0 +1,94 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.profile
+	padding: 0 25px
+
+	& > nav
+		display: flex
+		justify-content: space-between
+		margin-bottom: 25px
+		max-width: $account-profile-nav-width
+
+		h5
+			color: $gray-1
+			font-size: $small-text
+			font-weight: 600
+
+		a
+			color: $red
+			font-size: $medium-text - 1
+			font-weight: 600
+
+	form
+		& > div
+			max-width: 315px
+
+			&.profileActions
+				margin: 20px 0 20px 
+				max-width: 380px
+				display: flex
+				justify-content: space-between
+				align-items: center
+
+				& > button
+					width: 50%
+					flex-basis: 50%
+					padding: 5px 10px
+
+			&.otpAction
+				max-width: 375px
+
+a.adminEmail
+	color: $red
+
+a.deleteAccount
+	padding: 0 10px
+	color: $red
+	font-size: $medium-text - 1
+	letter-spacing: 0.93px
+	font-weight: 600
+
+.otp
+	margin-top: 40px
+
+	p
+		max-width: 300px
+		font-size: $medium-text
+		line-height: 1.21
+
+.otpFormGroup
+	margin-top: 30px
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+	& > div
+		width: calc(100% - 115px)
+		flex-basis: calc(100% - 115px)
+
+	& > span
+		color: $red
+		font-size: $medium-text - 1
+		font-weight: 600
+		transform: translateY(-9px)
+		cursor: pointer
+
+.otpAction
+	margin: 50px 0 10px
+	display: flex
+	align-items: center
+
+	button
+		width: 190px
+		flex-basis: 190px
+
+	.back
+		width: calc(100% - 190px)
+		flex-basis: calc(100% - 190px)
+		padding-left: 10px
+		font-size: $medium-text - 1
+		color: $brown-3
+		letter-spacing: 0.93px
+		font-weight: 600
+		cursor: pointer

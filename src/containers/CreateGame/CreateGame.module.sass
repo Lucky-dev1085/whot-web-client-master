@@ -1,0 +1,174 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.container
+	header
+		background: $white
+		position: sticky
+		top: 0
+		z-index: 10
+		height: $sign-up-header-height
+		box-shadow: 0 6px 12px 0 rgba(97,109,117,0.05)
+		@include fullCenter
+
+		a
+			position: absolute
+			left: 20px
+		
+		h4
+			font-size: $regular-text
+			font-weight: 600
+			letter-spacing: 0.8px
+
+.formControls
+	max-width: 505px
+	margin: auto
+
+.formContainer
+	margin: 40px auto 100px
+	max-width: $create-game-form-width
+
+.gameInfo
+	background: $light-gray
+	border-radius: $lg-border-radius
+	display: flex
+
+.amountColumn
+	padding: 25px 20px
+	width: 40%
+	flex-basis: 40%
+	border-right: thin solid $ash-2
+
+.balance
+	text-align: center
+	opacity: .74
+	font-size: $small-text - 2
+	line-height: 1.2
+	transform: translateY(-12px)
+
+.timeColumn
+	padding: 25px 20px
+	width: 28%
+	flex-basis: 28%
+	border-right: thin solid $ash-2
+
+.playersColumn
+	padding: 25px 0
+	width: 32%
+	flex-basis: 32%
+
+	label
+		display: block
+		color: $gray-1
+		font-size: $form-label-text
+		letter-spacing: 0.7px
+		line-height: 1.2
+		font-weight: 600
+		padding-left: 25px
+		margin-bottom: 5px
+		margin-bottom: 10px
+
+.formActions
+	border-top: thin solid $light-gray
+	padding: 10px 15px
+	display: flex
+	justify-content: flex-end
+	align-items: center
+
+	a
+		margin-right: 25px
+		color: $ash-3
+		letter-spacing: 1.14px
+		font-weight: 600
+
+.createFormActions
+	@extend .formActions
+	margin-top: 15px
+
+.invitesContainer
+	margin: 0 auto 100px
+	max-width: 740px
+
+.invitesForm
+	display: flex
+
+	& > div
+		min-height: 150px
+		width: 50%
+		flex-basis: 50%
+
+.playerSearch
+	padding: 40px 10px 0px 45px
+	border-right: thin solid $light-gray
+
+.playerSearchInput
+	max-width: 250px
+
+.playerOptions
+	max-height: 180px
+	padding: 25px 25px 10px
+	border-radius: $lg-border-radius
+	box-shadow: 0 6px 10px 0 rgba(63,53,55,0.1)
+	margin-bottom: 10px
+	overflow: auto
+	transform: translateY(-10px)
+
+	&.loading
+		opacity: .3
+		pointer-events: none
+
+	& > li
+		margin-bottom: 15px
+		cursor: pointer
+
+.searchMessage
+	margin-bottom: 20px
+	color: $gray-1
+	font-size: $medium-text
+	font-weight: 600
+
+.selectedPlayers
+	padding: 40px 45px 5px
+
+	h5
+		margin: 0 0 10px
+		text-align: center
+		color: $gray-1
+		font-size: $small-text - 2
+		line-height: 1.2
+		letter-spacing: 0.7px
+		font-weight: 600
+		transform: translateX(-30px)
+
+	li
+		margin-bottom: 10px
+		height: 40px
+		max-width: 256px
+		padding: 0 15px
+		display: flex
+		align-items: center
+		justify-content: space-between
+		background: $light-gray-2
+		border-radius: $button-sm-border-radius
+		line-height: 1.25
+		font-weight: 600
+
+		& > span
+			&:first-child
+				width: calc(100% - 40px)
+				flex-basis: calc(100% - 40px)
+				@include ellipsis
+
+			&:last-child
+				cursor: pointer
+
+.noInvites
+	display: block
+	background: $light-gray-2
+	padding: 10px
+	text-align: center
+	border-radius: $button-sm-border-radius
+	color: $brown-3
+	font-size: $regular-text
+	line-height: 1.25
+	font-weight: 600

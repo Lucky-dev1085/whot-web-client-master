@@ -1,0 +1,84 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.transactionCard
+	max-width: $transaction-card-width
+	height: $transaction-card-height
+	background: $white
+	padding: 15px
+	border-radius: $lg-border-radius
+	box-shadow: 0 10px 20px 0 rgba(87,100,106,0.03)
+	display: flex
+	font-size: $medium-text
+	line-height: 1.21
+	font-weight: 600
+
+	h5
+		color: $gray-1
+		font-size: $small-text - 2
+		line-height: 1.2
+		letter-spacing: 0.7px
+		font-weight: 600
+		margin-bottom: 5px
+
+	.depositAmount
+		width: 35%
+		flex-basis: 35%
+		padding-right: 10px
+
+		& > div
+			display: flex
+			align-items: center
+
+		svg
+			width: 22px
+			height: 21px
+			margin-right: 5px
+
+	.route
+		width: 45%
+		flex-basis: 45%
+
+		& > div
+			padding-top: 2px
+			@include ellipsis
+
+	.transactionDate
+		width: 20%
+		flex-basis: 20%
+		padding-left: 10px
+
+		& > div
+			padding-top: 2px
+
+.withStatus
+	max-width: $transaction-card-width + 60
+
+	.depositAmount
+		width: 30%
+		flex-basis: 30%
+
+	.route
+		width: 25%
+		flex-basis: 25%
+
+	.transactionDate
+		width: 20%
+		flex-basis: 20%
+
+	.transactionStatus
+		width: 25%
+		flex-basis: 25%
+		padding-left: 10px
+
+		& > div
+			padding-top: 2px
+
+.statusValue
+	color: $yellow-3
+
+.completedTransaction
+	color: $green-4
+
+.failedTransaction
+	color: $red

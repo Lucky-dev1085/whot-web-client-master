@@ -1,0 +1,42 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.header
+	position: fixed
+	top: 0
+	right: 0
+	left: 0
+	height: $header-height
+	background: $white
+	box-shadow: 0 6px 12px 0 rgba(97,109,117,0.05)
+	padding: 10px 20px 10px 30px
+	display: flex
+	justify-content: space-between
+	align-items: center
+	z-index:  50
+
+.homeLink
+	svg
+		transform: scale(.82) translateY(8px)
+
+.title
+	margin-left: 30px
+	line-height: 1.25
+	letter-spacing: 0.8px
+	font-weight: 600
+	text-transform: uppercase
+
+.accountDetails
+	span
+		margin-left: 25px
+		cursor: pointer
+
+	svg
+		transform: translateY(3px)
+
+.accountBalance
+	margin-right: 15px
+	font-size: $lg-regular-text - 1
+	line-height: 1.21
+	font-weight: 600
+	cursor: default

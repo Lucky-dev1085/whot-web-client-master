@@ -1,0 +1,74 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.container
+	display: flex
+	flex-direction: column
+	overflow: hidden
+
+	& > header
+		background: $white
+		position: sticky
+		top: 0
+		z-index: 10
+		height: $settings-header-height
+		box-shadow: 0 6px 12px 0 rgba(97,109,117,0.05)
+		@include fullCenter
+
+		a
+			position: absolute
+			left: 20px
+		
+		h4
+			font-size: $regular-text
+			font-weight: 600
+			letter-spacing: 0.8px
+
+	& > aside
+		position: fixed
+		top: $settings-header-height
+		left: 0
+		height: calc(100vh - #{$settings-header-height})
+		width: $settings-aside-width
+		max-width: 40%
+		background: $white
+		padding: 25px 20px
+		overflow: auto
+
+	& > section
+		width: calc(100vw - #{$settings-aside-width})
+		min-width: 60%
+		background: transparentize($brown-3, .9)
+		min-height: calc(100vh - #{$settings-header-height})
+		padding: 15px
+		align-self: flex-end
+
+.layoutCard
+	padding: 18px 20px
+	border-radius: $lg-border-radius
+	margin-bottom: 20px
+	color: $white
+	
+.asideLinks
+	min-height: calc(100vh - #{$settings-header-height + 200})
+
+	& > li
+		margin-bottom: 20px
+		font-size: $medium-text - 1
+		letter-spacing: 0.93px
+		font-weight: 600
+
+		a
+			display: flex
+			align-items: center
+			color: $light-gray-4
+
+			&.activeAsideLink
+				color: $black
+
+			&:not(.activeAsideLink)
+				svg g > circle:first-child
+					fill: $light-gray-4 
+
+			svg
+				margin-right: 10px

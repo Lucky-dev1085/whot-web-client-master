@@ -1,0 +1,66 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.container
+	min-height: calc(100vh - #{$header-height})
+	margin-top: $header-height
+	padding: 30px 0 0
+
+	@include before
+		position: fixed
+		top: calc(50vh - 50px)
+		left: 0
+		height: 248px
+		width: 88px
+		background:  url('../../shared/images/games-list-bg-left.png')
+		background-size: cover
+		z-index: -1
+
+	@include after
+		position: fixed
+		top: calc(50vh - 95px)
+		right: 0
+		height: 375px
+		width: 126px
+		background:  url('../../shared/images/games-list-bg-right.png')
+		background-size: cover
+		z-index: -1
+
+	& > header
+		z-index: -1
+
+.gamesList
+	position: relative
+	margin: auto
+	z-index: 10
+
+	& > nav
+		max-width: $game-card-width + 20
+		height: $games-list-nav-height
+		margin: auto
+		padding: 0 10px
+		display: flex
+		justify-content: space-between
+
+	& > div
+		display: flex
+		justify-content: center
+
+		& > div
+			outline: 0
+
+.cardContainer
+	display: flex
+	justify-content: center
+ 
+.resultSummary
+	color: $gray-1
+	font-size: $small-text - 2
+	line-height: 1.2
+	letter-spacing: 0.7px 
+	font-weight: 600
+
+.loadingMask
+	@include fullAbsolute
+	background: transparentize($white, .3)
+	z-index: 20

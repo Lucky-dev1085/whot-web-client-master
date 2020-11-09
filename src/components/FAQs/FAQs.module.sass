@@ -1,0 +1,35 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.faqs
+	margin: 15px 0
+	max-width: 465px 
+
+.faqItem
+	line-height: 1.25
+	margin-bottom: 35px
+	overflow: hidden
+	transition: max-height .4s $primary-ease
+
+.question
+	padding: 0 20px 10px 0
+	position: relative
+	cursor: pointer
+
+	@include after
+		position: absolute
+		top: 7px
+		right: 0
+		border-color: $red transparent
+		border-style: solid
+		border-width: 0px 5px 5px 5px
+		height: 0px
+		width: 0px
+		transition: transform .4s $primary-ease
+
+	&.isOpen
+		&:after
+			transform: rotate3d(1, 0, 0, 180deg)
+
+.answer
+	padding: 0 20px 0 15px

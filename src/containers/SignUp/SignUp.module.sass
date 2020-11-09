@@ -1,0 +1,57 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.container
+	header
+		background: $white
+		position: sticky
+		top: 0
+		z-index: 10
+		height: $sign-up-header-height
+		box-shadow: 0 6px 12px 0 rgba(97,109,117,0.05)
+		@include fullCenter
+
+		a
+			position: absolute
+			left: 20px
+		
+		h4
+			font-size: $regular-text
+			font-weight: 600
+			letter-spacing: 0.8px
+
+.formContainer
+	margin: 40px auto 100px
+	max-width: $sign-up-form-width
+
+.username
+	max-width: $sign-up-form-width - 80
+
+.password
+	max-width: $sign-up-form-width - 105
+
+.promoCode
+	max-width: $sign-up-form-width - 155
+
+.termsAgreement
+	margin: 40px 5px 40px 15px
+
+	a
+		font-weight: 600
+		text-decoration: underline
+
+.formActions
+	text-align: center
+
+	button
+		padding-left: 60px
+		padding-right: 60px
+
+.signIn
+	margin-top: 15px
+	text-align: center
+	line-height: 1.21
+
+	a
+		color: $red
+		text-decoration: underline

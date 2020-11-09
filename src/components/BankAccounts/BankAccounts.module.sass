@@ -1,0 +1,117 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.bankAccounts
+	padding: 0 0 0 25px
+
+	& > h5
+		margin-bottom: 60px
+		color: $gray-1
+		font-size: $small-text
+		font-weight: 600
+
+.withListLabel
+	padding: 0 0 0 30px
+
+	& > h5
+		line-height: 1.25
+		letter-spacing: 0.84px
+		margin-bottom: 35px
+
+	.allBanks > h6
+		margin-bottom: 15px
+		color: $gray-1
+		font-size: $small-text - 2
+		letter-spacing: 0.7px
+		font-weight: 600
+
+	.banksSlider
+		margin-bottom: 35px
+
+.addNewLink
+	display: inline-flex
+	justify-content: center
+	align-items: center
+	font-size: $small-text + 1
+	line-height: 1.3
+	letter-spacing: 0.93px
+	font-weight: 600
+
+	svg
+		margin-right: 10px
+
+.allBanks
+	margin-right: -15px
+
+	& > div:last-child:not(.withCompleteAction)
+		margin-right: 50px
+		text-align: right
+
+.withCompleteAction
+	display: flex
+
+	a
+		margin-right: 40px
+
+.selectedBankDelete
+	margin-bottom: 40px
+	padding-right: 15px 
+	max-width: 365px
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+	& > div:first-child
+		width: calc(100% - 160px)
+		flex-basis: calc(100% - 160px)
+
+	h4
+		margin-bottom: 5px
+		font-size: $regular-text - 1
+		line-height: 1.2
+		letter-spacing: 1 
+		font-weight: 600
+		text-transform: uppercase
+		@include ellipsis
+
+	p
+		color: transparentize($black, .6)
+		font-size: $small-text - 2
+		line-height: 1.2
+		letter-spacing: 1px
+		font-weight: 600
+
+		span
+			color: $black
+
+.banksSlider
+	margin-bottom: 60px
+
+	&:not(.showSlides)
+		opacity: 0
+	
+	[data-index] > div > div
+		outline: 0
+
+	\:global
+		.slick-list
+			padding: 0 0 25px 0
+
+		.slick-dots
+			bottom: -8px
+
+			li
+				width: 2px
+
+			button:hover:before
+				color: $red !important
+
+		.slick-active button
+			&:before
+				color: $red !important
+
+.containSlides
+	\:global
+		.slick-slide
+			width: $bank-card-width + 15px !important
+				

@@ -1,0 +1,54 @@
+@import '../../sass/abstracts/variables.sass'
+@import '../../sass/abstracts/mixins.sass'
+
+.container
+	padding: 15px 25px
+
+	h4
+		font-size: $medium-text - 1
+		letter-spacing: 0.93px
+		line-height: 1.3
+		font-weight: 600
+		margin-bottom: 30px
+
+	p
+		font-size: $medium-text
+		line-height: 1.21
+
+.title
+	color: $red
+
+.warning
+	max-width: 300px
+
+.deleteAction
+	margin: 100px 0 10px
+	max-width: 375px
+	display: flex
+	align-items: center
+
+	button
+		width: 190px
+		flex-basis: 190px
+
+.back
+	width: calc(100% - 190px)
+	flex-basis: calc(100% - 190px)
+	padding-left: 10px
+	font-size: $medium-text - 1
+	color: $brown-3
+	letter-spacing: 0.93px
+	font-weight: 600
+
+.deleteModal
+	width: $delete-modal-width
+
+	h4
+		margin-bottom: 75px
+
+	p
+		text-align: center
+		margin-bottom: 20px
+
+.deleteInput
+	margin: 0 20px 75px
